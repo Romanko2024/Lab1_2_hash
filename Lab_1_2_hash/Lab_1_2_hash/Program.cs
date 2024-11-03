@@ -255,6 +255,20 @@ class Program
 {
     static void Main(string[] args)
     {
+        //створюємо хешсет
+        HashSet<TTriangle> triangleSet = new HashSet<TTriangle>();
+
+        //свторюємо перший трикутник і додаємо до хешсету
+        TTriangle triangle1 = new TTriangle(3, 4, 5);
+        triangleSet.Add(triangle1);
+
+        //створюємо ідентичний трикутник але інш об'єкт)
+        TTriangle identicalTriangle = new TTriangle(3, 4, 5);
+        //перевірямо чи порівняння і створення хешкоду правильне
+        bool found = triangleSet.Contains(identicalTriangle);
+
+        Console.WriteLine($"Чи знайдено ідентичний трикутник в HashSet: {found}");
+
         // тест призма
         TTrianglePrism prism1 = new TTrianglePrism(3, 4, 5, 10);
 
