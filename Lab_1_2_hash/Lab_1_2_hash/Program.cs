@@ -250,6 +250,26 @@ public class TTrianglePrism : TTriangle
         return prism * factor; // викликає попередньо перевантажений оператор
     }
 }
+//Створити клас-нащадок TTriangleF на основі класу TTriangle, в якому додатково перевизначити методи Equals та GetHashCode.
+public class TTriangleF : TTriangle
+{
+    //новий конструктор викликає старий
+    public TTriangleF(double a, double b, double c) : base(a, b, c) { }
+    //оверрайд Equals для порівняння obj TTriangleF
+    public override bool Equals(object obj)
+    {
+        if (obj is TTriangleF other) //чи об'єкт є екз. класу
+        {
+            return base.Equals(other); //виклик базовго
+        }
+        return false;
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode(); //просто виклик базового
+    }
+}
 
 class Program
 {
