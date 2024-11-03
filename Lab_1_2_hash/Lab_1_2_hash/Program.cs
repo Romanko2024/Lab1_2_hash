@@ -111,6 +111,11 @@
         }
         return (this.a == other.a && this.b == other.b && this.c == other.c);
     }
+    //з оверрайдом щоб однакові екз. мали однаковий хешкод
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(a, b, c);
+    }
 
     // перевірка нерівності трикутників
     public virtual bool NotEquals(TTriangle other)
