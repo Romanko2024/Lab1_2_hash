@@ -270,6 +270,36 @@ public class TTriangleF : TTriangle
         return base.GetHashCode(); //просто виклик базового
     }
 }
+//Створити клас-нащадок TTrianglePrizm на основі класу TTriangleF. 
+public class TTrianglePrismF : TTriangleF
+{
+    //властив. Color 
+    public string Color { get; set; }
+    //
+    private double height;
+
+    //конструктор класу TTrianglePrismF. приймає сторони трикутника+ висота + колір
+    public TTrianglePrismF(double a, double b, double c, double height, string color) : base(a, b, c)
+    {
+        //присвоєння значень
+        this.height = height;
+        this.Color = color;
+    }
+
+    //обчислення об'єма призми 
+    public double GetVolume()
+    {
+        //площа трик.*висота
+        return GetArea() * height;
+    }
+
+    //перевизн для рядкового представлення призми
+    public override string ToString()
+    {
+        //трикутник, висота та колір
+        return base.ToString() + $", Height = {height}, Color = {Color}";
+    }
+}
 
 class Program
 {
