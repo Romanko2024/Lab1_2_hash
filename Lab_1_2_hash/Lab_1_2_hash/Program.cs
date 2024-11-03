@@ -330,6 +330,17 @@ class Program
         //результ. теста
         Console.WriteLine($"Чи знайдено ідентичний TTriangleF у HashSet: {foundF}");
 
+        // хешсети з TTrianglePrismF (5 пункт завдання) однаковы призми рызны кольолори
+        HashSet<TTrianglePrismF> prismSet = new HashSet<TTrianglePrismF>
+        {
+            new TTrianglePrismF(3, 4, 5, 10, "Red"),
+            new TTrianglePrismF(3, 4, 5, 10, "Green"),
+            new TTrianglePrismF(3, 4, 5, 10, "Blue"),
+            new TTrianglePrismF(3, 4, 5, 10, "Yellow"),
+            new TTrianglePrismF(3, 4, 5, 10, "White")
+        };
+
+        Console.WriteLine($"Кількість елементів у хешсеті: {prismSet.Count}");
 
         // тест призма
         TTrianglePrism prism1 = new TTrianglePrism(3, 4, 5, 10);
