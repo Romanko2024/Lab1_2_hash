@@ -300,6 +300,34 @@ public class TTrianglePrismF : TTriangleF
         return base.ToString() + $", Height = {height}, Color = {Color}";
     }
 }
+//шостий крок
+public class TTrianglePrismFF : TTrianglePrismF
+{
+    // 
+    public TTrianglePrismFF(double a, double b, double c, double height, string color) : base(a, b, c, height, color)
+    {
+        // виклик базового для ініц.
+    }
+
+    //порівняння призм за кольором та базовими власт.
+    public override bool Equals(object obj)
+    {
+        //чи obj є TTrianglePrismFF
+        if (obj is TTrianglePrismFF other)
+        {
+            // порівнюємо кольори + Equals для перевірки трикутників
+            return base.Equals(other) && Color == other.Color;
+        }
+        return false; // якщо не того типу
+    }
+
+    //
+    public override int GetHashCode()
+    {
+        //обчислюємо хеш-код, комбінуючи хеш-код сторін, кольору та висоти
+        return HashCode.Combine(base.GetHashCode(), Color);
+    }
+}
 
 class Program
 {
