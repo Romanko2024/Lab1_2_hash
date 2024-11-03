@@ -368,7 +368,19 @@ class Program
             new TTrianglePrismF(3, 4, 5, 10, "White")
         };
 
-        Console.WriteLine($"Кількість елементів у хешсеті: {prismSet.Count}");
+        Console.WriteLine($"Кількість елементів у хешсеті(TTrianglePrismF): {prismSet.Count}");
+
+        // хешсети з TTrianglePrismFF 
+        HashSet<TTrianglePrismFF> prismSetFF = new HashSet<TTrianglePrismFF>
+        {
+            new TTrianglePrismFF(3, 4, 5, 10, "Red"),
+            new TTrianglePrismFF(3, 4, 5, 10, "Green"),
+            new TTrianglePrismFF(3, 4, 5, 10, "Blue"),
+            new TTrianglePrismFF(3, 4, 5, 10, "Yellow"),
+            new TTrianglePrismFF(3, 4, 5, 10, "White")
+        };
+
+        Console.WriteLine($"Кількість елементів у хешсеті(TTrianglePrismFF): {prismSet.Count}");
 
         // тест призма
         TTrianglePrism prism1 = new TTrianglePrism(3, 4, 5, 10);
