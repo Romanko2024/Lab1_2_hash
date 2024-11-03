@@ -287,7 +287,19 @@ class Program
         //перевірямо чи порівняння і створення хешкоду правильне
         bool found = triangleSet.Contains(identicalTriangle);
 
-        Console.WriteLine($"Чи знайдено ідентичний трикутник в HashSet: {found}");
+        Console.WriteLine($"Чи знайдено ідентичний трикутник у HashSet: {found}");
+        //хешсет для<TTriangleF>
+        HashSet<TTriangleF> triangleFSet = new HashSet<TTriangleF>();
+
+        TTriangleF triangleF1 = new TTriangleF(3, 4, 5);
+        triangleFSet.Add(triangleF1);
+
+        TTriangleF identicalTriangleF = new TTriangleF(3, 4, 5);
+        bool foundF = triangleFSet.Contains(identicalTriangleF);
+
+        //результ. теста
+        Console.WriteLine($"Чи знайдено ідентичний TTriangleF у HashSet: {foundF}");
+
 
         // тест призма
         TTrianglePrism prism1 = new TTrianglePrism(3, 4, 5, 10);
