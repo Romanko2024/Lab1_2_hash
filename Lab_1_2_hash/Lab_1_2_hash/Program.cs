@@ -117,6 +117,15 @@
         return HashCode.Combine(a, b, c);
     }
 
+    //
+    public override bool Equals(object obj)
+    {
+        if (obj is TTriangle other) //якщо є екземпляром
+        {
+            return this.a == other.a && this.b == other.b && this.c == other.c;
+        }
+        return false;
+    }
     // перевірка нерівності трикутників
     public virtual bool NotEquals(TTriangle other)
     {
